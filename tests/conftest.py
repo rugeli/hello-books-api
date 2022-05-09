@@ -2,7 +2,7 @@ import pytest
 from app import create_app
 from app import db
 from flask.signals import request_finished
-from app.models import book
+
 
 @pytest.fixture
 def app():
@@ -24,9 +24,3 @@ def app():
 def client(app):
     return app.test_client()
 
-
-@pytest.fixture 
-def two_saved_books(app):
-    #Arrange
-    ocean_book = Book(title="Ocean book", description="watr 4evr")
-    mountain_book = Book(title="Mountain Book", description="i luv 2 climb rocks")
